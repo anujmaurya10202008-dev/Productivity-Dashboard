@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://icons.iconarchive.com/icons/blackvariant/button-ui-requests-5/256/ToDo-List-icon.png"
+      type="image/x-icon"
+    />
+    <title>Productivity Dashboard</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <video
+          autoplay
+          muted
+          loop
+          src="https://www.pexels.com/download/video/15431884/"
+        ></video>
+        <div class="nav1"><h1>Productivity Dashboard</h1></div>
+        <div class="nav2"><button>Change Theme</button></div>
+      </nav>
+      <section class="allElem">
+        <header>
+          <div class="header1">
+            <h2></h2>
+            <h1></h1>
+            <h2 class="city"></h2>
+          </div>
+          <div class="header2">
+            <h1 class="temperature"></h1>
+            <h2 class="feellike"></h2>
+            <h3 class="heat-Index"></h3>
+            <h3 class="wind"></h3>
+            <h3 class="humidity"></h3>
+          </div>
+        </header>
+        <div class="all-features">
+          <div class="todo elem" id="0">
+            <h2>To DO List</h2>
+            <img
+              src="https://plus.unsplash.com/premium_photo-1710962184909-f9f8dc2c9f5f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+          <div class="daily elem" id="1">
+            <h2>Daily PLanner</h2>
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1677249490921-3246e81f19e3?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+          <div class="moti elem" id="2">
+            <h2>Motivation</h2>
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1678986718987-76f0b9357e0f?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+          <div class="pomo elem" id="3">
+            <h2>Pomodoro Timer</h2>
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1648457259767-e3a7fea65a99?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+          <div class="goals elem" id="4">
+            <h2>Daily Goals</h2>
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1718202248232-0cdbc15d29b2?q=80&w=3928&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="fullElem todo-list-fullpage">
+        <button class="back" id="0">Close</button>
+        <h2>Your Personalized Task List</h2>
+        <div class="todo-container">
+          <div class="addTask">
+            <form>
+              <input required type="text" placeholder="Enter Task..." />
+              <textarea placeholder="Enter Details" id=""></textarea>
+              <div class="imp-mark">
+                <input type="checkbox" name="" id="check" />
+                <label for="check">Important!.</label>
+              </div>
+              <button>Add Task</button>
+            </form>
+          </div>
+
+          <div class="allTask"></div>
+        </div>
+      </section>
+      <section class="fullElem daily-planner-fullpage">
+        <button class="back" id="1">Close</button>
+        <h2>Plan your Day to be more Productive</h2>
+        <div class="day-planner"></div>
+      </section>
+      <section class="fullElem motivational-fullpage">
+        <button class="back" id="2">Close</button>
+        <div class="motivation-container">
+          <div class="motivation-wrapper">
+            <img src="quotation_9915682.png" alt="" />
+            <div class="motivation-1">
+              <h2>Quote of the Day</h2>
+            </div>
+            <div class="motivation-2">
+              <p></p>
+            </div>
+            <div class="motivation-3">
+              <h2></h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="fullElem pomodoro-fullpage">
+        <button class="back" id="3">Close</button>
+        <h2>Study with me!</h2>
+
+        <div class="pomo-timer">
+          <h2>25:00</h2>
+          <div class="pomo-btn">
+            <div class="start-timer">Start</div>
+            <div class="pause-timer">Pause</div>
+            <div class="reset-timer">Reset</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="fullElem daily-goals">
+        <button class="back" id="4">Close</button>
+        <div class="nav">
+          <div class="left">Your Daily Goals</div>
+          <div class="right"><button>Add new Task</button></div>
+        </div>
+        <section class="board">
+          <div id="todo-column" class="task-column">
+            <div class="heading">
+              <div class="left">Goals</div>
+              <div class="count right">Count</div>
+            </div>
+          </div>
+          <div id="progress-column" class="task-column">
+            <div class="heading">
+              <div class="left">In Progress</div>
+              <div class="count right">Count</div>
+            </div>
+          </div>
+          <div id="done-column" class="task-column">
+            <div class="heading">
+              <div class="left">Completed</div>
+              <div class="count right">Count</div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <div class="modal">
+        <div class="bg"></div>
+        <div class="center-task">
+          <input required type="text" placeholder="Enter Tasks..." />
+          <textarea placeholder="Enter Tasks..."></textarea>
+          <button>Add Task</button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

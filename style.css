@@ -1,0 +1,1220 @@
+:root {
+  --pri: #f8f4e1;
+  --sec: #381c0a;
+  --tri1: #feba17;
+  --tri2: #74512d;
+  --back: rgba(255, 0, 0, 0.918);
+  --btn-color: rgba(87, 75, 75, 0.787);
+  --daily-color: #181818;
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-xxl: 80px;
+
+  /* Type scale */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-md: 20px;
+  --text-lg: 28px;
+  --text-xl: 40px;
+  --text-2xl: 60px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* Nav height — used for offset calculations */
+  --nav-h: 60px;
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Fonts ────────────────────────────────────────────────── */
+@font-face {
+  font-family: bold;
+  src: url(Aeonik-Bold.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: normal;
+  src: url(Aeonik-Regular.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: light;
+  src: url(Aeonik-Light.ttf);
+  font-display: swap;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: normal;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Navigation ───────────────────────────────────────────── */
+nav {
+  height: var(--nav-h);
+  width: calc(100% - var(--space-md) * 2);
+  background-color: var(--tri2);
+  position: fixed;
+  border-radius: var(--radius-md);
+  top: 10px;
+  left: var(--space-md);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  box-shadow: var(--shadow-md);
+}
+nav video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: var(--radius-md);
+}
+
+nav .nav1 h1 {
+  font-family: bold;
+  background-image: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3VsZDJjNHYzNTdpa2w5Y3FwNnhxdXZqd2poZjRxeWVqZHVuMTU1ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7AtHoQ9XWbpwLRxs0t/giphy.webp);
+  background-size: cover;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+nav .nav2 {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+nav .nav2 button {
+  padding: var(--space-sm) var(--space-md);
+  font-family: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  transition:
+    transform 0.1s ease,
+    opacity 0.2s ease;
+}
+
+nav .nav2 button:active {
+  transform: scale(0.97);
+  opacity: 0.85;
+}
+
+/* ── Layout Shell ─────────────────────────────────────────── */
+main {
+  min-height: 100%;
+  width: 100%;
+  background-color: var(--sec);
+  overflow: hidden;
+  position: relative;
+}
+
+section.allElem {
+  position: relative;
+  inset: unset;
+  min-height: auto;
+  overflow: hidden;
+  padding: 0px 10px;
+  margin-top: var(--space-xxl);
+}
+
+/* ── Feature Grid (card thumbnails) ──────────────────────── */
+.all-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-direction: row;
+  /* margin-top: var(--space-md); */
+  padding: var(--space-md);
+}
+
+.elem {
+  height: clamp(90px, 40vw, 200px);
+  width: clamp(90px, 40vw, 200px);
+  background-color: var(--tri1);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+
+.elem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.elem:active {
+  transform: scale(0.92);
+}
+
+.elem h2 {
+  position: absolute;
+  bottom: 5%;
+  right: 8%;
+  font-family: light;
+  color: var(--pri);
+  font-size: var(--text-md);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.elem img {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Full-Page Feature Views ──────────────────────────────── */
+.fullElem {
+  display: none; /* toggled to block via JS */
+  position: absolute;
+  inset: 0;
+  top: var(--nav-h);
+  padding: var(--space-lg);
+  color: var(--pri);
+  background-color: var(--sec);
+  overflow-y: auto;
+  min-height: auto;
+}
+
+.fullElem h2 {
+  font-size: clamp(var(--text-lg), 5vw, var(--text-2xl));
+}
+
+.back {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: none;
+  background-color: var(--back);
+  color: var(--pri);
+  position: absolute;
+  right: 5%;
+  top: 5.5%;
+  cursor: pointer;
+  font-family: bold;
+  font-size: var(--text-sm);
+  transition: transform 0.1s ease;
+}
+
+.back:active {
+  transform: scale(0.97);
+}
+
+/* ── To-Do ────────────────────────────────────────────────── */
+.todo-container {
+  display: flex;
+  gap: var(--space-lg);
+  width: 100%;
+  padding: var(--space-md) 0;
+  background-color: var(--sec);
+}
+
+.addTask {
+  flex: 0 0 35%;
+  min-width: 260px;
+  padding: var(--space-md);
+  background-color: var(--tri2);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.addTask form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: var(--space-lg) var(--space-md);
+  font-size: clamp(var(--text-base), 2.5vw, 30px);
+  border-radius: var(--radius-md);
+  border: none;
+  outline: none;
+  font-family: normal;
+  resize: vertical;
+}
+
+form button {
+  padding: var(--space-lg) var(--space-md);
+  width: 100%;
+  font-size: clamp(var(--text-base), 2.5vw, 30px);
+  border-radius: var(--radius-md);
+  border: none;
+  outline: none;
+  font-family: bold;
+  background-color: var(--tri1);
+  color: var(--pri);
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    opacity 0.2s ease;
+}
+
+form button:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+.imp-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.imp-mark #check {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.imp-mark label {
+  font-size: clamp(var(--text-base), 2vw, 25px);
+  cursor: pointer;
+}
+
+/* Task list panel */
+.allTask {
+  flex: 1 1 0;
+  min-width: 0;
+  background-color: var(--tri2);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: var(--space-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.allTask .task {
+  min-height: 60px;
+  height: auto;
+  padding: var(--space-sm) var(--space-md);
+  width: 100%;
+  background-color: var(--pri);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  gap: var(--space-sm);
+}
+
+.task details {
+  width: 80%;
+}
+
+.task summary {
+  cursor: pointer;
+  font-size: clamp(var(--text-base), 2.5vw, 30px);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  list-style: none;
+}
+
+.task summary::after {
+  content: " ▼";
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+
+.task details[open] summary::after {
+  content: " ▲";
+}
+
+.task summary span {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  color: var(--pri);
+  background-color: red;
+  transition: opacity 0.2s;
+}
+
+.task summary span.true {
+  opacity: 1;
+}
+.task summary span.false {
+  opacity: 0;
+}
+
+.task details p {
+  margin-top: var(--space-sm);
+  font-size: var(--text-base);
+  opacity: 0.75;
+}
+
+.task button {
+  flex-shrink: 0;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  color: var(--pri);
+  font-family: bold;
+  font-size: var(--text-sm);
+  border: none;
+  cursor: pointer;
+  background-color: green;
+  transition:
+    transform 0.1s ease,
+    background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.task button:active {
+  transform: scale(0.95);
+  background-color: red;
+}
+
+/* ── Day Planner ──────────────────────────────────────────── */
+.day-planner {
+  width: 100%;
+  background-color: var(--tri2);
+  margin-top: var(--space-lg);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  gap: var(--space-md);
+  overflow-y: auto;
+}
+
+.day-planner-time {
+  position: relative;
+  background-color: var(--sec);
+  border-radius: var(--radius-md);
+  min-height: 70px;
+  box-shadow: var(--shadow-sm);
+}
+
+.day-planner-time p {
+  position: absolute;
+  font-size: var(--text-xs);
+  top: 6px;
+  left: 12px;
+  color: var(--tri1);
+  font-family: bold;
+  z-index: 1;
+}
+
+.day-planner-time input {
+  width: 100%;
+  height: 100%;
+  min-height: 70px;
+  font-size: clamp(var(--text-sm), 2vw, 22px);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-xl) var(--space-md) var(--space-sm);
+  color: var(--pri);
+  font-family: light;
+}
+
+/* ── Motivation Card ──────────────────────────────────────── */
+.motivational-fullpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--nav-h));
+  padding: var(--space-lg);
+  display: none;
+  position: "relative";
+}
+
+.motivational-fullpage.active {
+  display: flex;
+}
+.motivational-fullpage .motivation-container {
+  position: relative;
+  width: min(900px, 100%);
+  background-color: var(--tri1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  min-height: fit-content;
+  margin: 0 auto;
+  transform: translateY(20%);
+}
+
+.motivation-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--tri1);
+  filter: blur(150px);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+}
+
+.motivation-wrapper {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  background-color: var(--tri1);
+  padding: var(--space-lg);
+}
+
+.motivation-1 {
+  height: clamp(48px, 8vw, 60px);
+  width: clamp(160px, 40%, 35%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-md);
+  background-color: var(--sec);
+}
+
+.motivation-1 h2 {
+  font-size: clamp(var(--text-md), 3vw, 35px);
+  color: var(--pri);
+}
+
+.motivation-2 {
+  min-height: 100px;
+  padding: var(--space-xs);
+  margin-top: var(--space-lg);
+}
+
+.motivation-2 p {
+  font-size: clamp(var(--text-md), 3vw, 35px);
+  font-family: bold;
+  color: var(--pri);
+  line-height: 1;
+}
+
+.motivation-3 {
+  min-height: 48px;
+  max-width: clamp(120px, 30%, 400px);
+  background-color: var(--sec);
+  color: var(--pri);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin-left: 70%;
+}
+
+.motivation-3 h2 {
+  line-height: 1.3;
+  font-size: clamp(var(--text-base), 2.5vw, 30px);
+  display: inline-block;
+}
+
+.motivation-wrapper img {
+  height: clamp(50px, 10vw, 80px);
+  position: absolute;
+  right: 10%;
+  opacity: 0.3;
+}
+
+/* ── Pomodoro Timer ───────────────────────────────────────── */
+.pomodoro-fullpage {
+  position: relative;
+  height: calc(100vh - var(--nav-h));
+  position: absolute;
+  top: var(--nav-h);
+}
+
+.pomodoro-fullpage h2 {
+  font-size: clamp(var(--text-lg), 6vw, 80px);
+}
+
+.pomo-timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.pomo-timer h2 {
+  font-size: clamp(80px, 15vw, 170px);
+  color: var(--pri);
+}
+
+.pomo-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.pomo-btn .start-timer,
+.pomo-btn .pause-timer,
+.pomo-btn .reset-timer {
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--tri2);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.54);
+  font-size: clamp(var(--text-base), 2.5vw, 30px);
+  font-family: bold;
+  cursor: pointer;
+  color: var(--pri);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+.pomo-btn .start-timer:active,
+.pomo-btn .pause-timer:active,
+.pomo-btn .reset-timer:active {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 0 0 rgba(235, 217, 217, 0.44);
+}
+
+/* ── Header (dashboard hero) ──────────────────────────────── */
+header {
+  width: 100%;
+  min-height: clamp(140px, 20vw, 220px);
+  background-image: url(https://plus.unsplash.com/premium_photo-1681437096601-fb422fc5f749?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-xl);
+  color: var(--pri);
+  gap: var(--space-lg);
+  margin-top: 10px;
+}
+
+header .header1 h1 {
+  font-size: clamp(28px, 5vw, var(--text-2xl));
+  margin-bottom: var(--space-md);
+}
+
+header .header1 h2 {
+  font-size: clamp(var(--text-base), 3vw, 35px);
+  font-weight: 200;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+header .header1 .time {
+  letter-spacing: 3px;
+}
+
+header .header2 h1 {
+  font-size: clamp(28px, 5vw, var(--text-2xl));
+}
+
+header .header2 h2 {
+  font-size: clamp(var(--text-base), 2.5vw, 30px);
+  margin-bottom: var(--space-md);
+  font-weight: 200;
+}
+
+header .header2 h3 {
+  font-size: var(--text-sm);
+  font-weight: 200;
+  opacity: 0.9;
+}
+.fullElem.daily-goals {
+  flex-direction: column;
+}
+.daily-goals .nav {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+.daily-goals .nav .left {
+  font-size: 3rem;
+  font-family: bold;
+}
+
+.daily-goals .nav .right {
+  margin-right: 150px;
+}
+.daily-goals .nav .right button {
+  padding: 10px 20px;
+  background-color: var(--btn-color);
+  color: var(--pri);
+  border-radius: 10px;
+  font-family: bold;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.daily-goals .nav .right button:active {
+  scale: 0.97;
+}
+.daily-goals .board {
+  display: flex;
+  flex-grow: 1;
+  padding: var(--space-md);
+  gap: 15px;
+}
+
+.board .task-column {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  background-color: rgba(18, 15, 15, 0.713);
+  padding: var(--space-sm);
+  width: 100%;
+  min-height: 70vh;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  gap: 10px;
+}
+
+.task-column.active {
+  border: 2px dashed var(--pri);
+  transform: scale(1.05);
+}
+
+.daily-goals .task-column .heading {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 20px;
+  padding: 0px var(--space-sm);
+}
+.daily-goals .task-column .daily-goal-task {
+  background-color: var(--btn-color);
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  cursor: grab;
+}
+.daily-goals .task-column .daily-goal-task h2 {
+  font-size: 30px;
+}
+
+.daily-goals .task-column .daily-goal-task button {
+  align-self: flex-end;
+  cursor: pointer;
+  background-color: red;
+  border: none;
+  outline: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 10px;
+  color: var(--pri);
+  cursor: pointer;
+}
+.daily-goals .task-column .daily-goal-task button:active {
+  scale: 0.97;
+}
+.modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.679);
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg {
+  height: 100%;
+  width: 100%;
+  background-color: #181818aa;
+  backdrop-filter: blur(1.5px);
+  position: absolute;
+}
+.modal .center-task {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background-color: rgba(0, 0, 0, 0.165);
+  border-radius: var(--radius-md);
+  z-index: 10;
+}
+.modal .center-task input {
+  background-color: var(--daily-color);
+  color: white;
+  width: 100%;
+  padding: var(--space-md);
+  border: none;
+  outline: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+.modal .center-task textarea {
+  background-color: var(--daily-color);
+  color: white;
+  width: 100%;
+  padding: var(--space-md);
+  border: none;
+  outline: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+.modal .center-task button {
+  background-color: var(--daily-color);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-xl);
+  align-self: center;
+  width: fit-content;
+  cursor: pointer;
+}
+.modal .center-task button:active {
+  scale: 0.97;
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* ── Desktop 1440px+ ──────────────────────────────────────── */
+/* No overrides needed — base styles are already desktop-first. */
+
+/* ── Laptop (≤1024px) ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  /* Nav: slightly tighter padding, prevent overflow */
+  nav {
+    padding: 0 var(--space-md);
+  }
+
+  /* Header: reduce horizontal padding */
+  header {
+    padding: var(--space-lg) var(--space-lg);
+  }
+
+  /* Daily goals nav: reduce right margin so button doesn't push off-screen */
+  .daily-goals .nav .right {
+    margin-right: 150px;
+  }
+}
+
+/* ── Tablet (≤768px) ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Nav: tighter padding; h1 font scales down */
+  nav {
+    padding: 0 var(--space-md);
+  }
+
+  nav .nav1 h1 {
+    font-size: clamp(18px, 4vw, var(--text-lg));
+  }
+
+  nav .nav2 button {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-xs);
+  }
+
+  /* Header: stack vertically, left-aligned */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    min-height: unset;
+  }
+
+  /* Feature grid: 3 equal columns */
+
+  /* To-Do: stack add panel above task list */
+  .todo-container {
+    flex-direction: column;
+  }
+
+  .addTask {
+    flex: unset;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .allTask {
+    min-height: 300px;
+    max-height: 60vh;
+  }
+
+  /* Back button: position relative to viewport edge; prevent title overlap */
+  .back {
+    right: var(--space-md);
+    top: var(--space-md);
+  }
+
+  /* Day planner: two-column grid already works, reduce padding */
+  .day-planner {
+    padding: var(--space-md);
+  }
+
+  /* Motivation card: author tag no longer needs 70% push — float right naturally */
+  .motivation-3 {
+    margin-left: auto;
+    margin-top: var(--space-md);
+    max-width: clamp(120px, 50%, 400px);
+  }
+
+  /* Daily goals nav: remove large right margin */
+  .daily-goals .nav .right {
+    margin-right: 100px;
+  }
+
+  /* Daily goals board: allow horizontal scroll to preserve column layout */
+  .daily-goals .board {
+    padding-bottom: var(--space-sm);
+  }
+
+  /* Each task column: enforce minimum width so content doesn't collapse */
+  .board .task-column {
+    min-width: 80%;
+    overflow-x: auto;
+  }
+
+  /* Modal: ensure it fills correctly on tablet */
+  .modal .center-task {
+    width: min(480px, 90vw);
+    flex-shrink: 0;
+  }
+}
+
+/* ── Large Mobile (≤425px) ────────────────────────────────── */
+@media (max-width: 425px) {
+  /* Nav height: slightly reduce for more content space */
+  :root {
+    --nav-h: 54px;
+  }
+
+  /* Nav: minimal padding, compact button text */
+  nav {
+    width: calc(100% - var(--space-sm) * 2);
+    left: var(--space-sm);
+    padding: 0 var(--space-sm);
+  }
+
+  nav .nav1 h1 {
+    font-size: clamp(15px, 4.5vw, 20px);
+  }
+
+  nav .nav2 {
+    gap: var(--space-xs);
+  }
+
+  nav .nav2 button {
+    padding: 5px var(--space-sm);
+    font-size: 11px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Section: reduce top margin since nav is shorter */
+  section.allElem {
+    margin-top: 70px;
+    padding: 0 var(--space-sm);
+  }
+
+  /* Feature grid: 2 columns */
+
+  /* Header: compact padding */
+  header {
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+  }
+
+  header .header1 h1,
+  header .header2 h1 {
+    font-size: clamp(22px, 6vw, 30px);
+  }
+
+  /* fullElem: tighter padding on small screens */
+  .fullElem {
+    padding: var(--space-md);
+  }
+
+  /* Back button: top-right corner, away from title */
+  .back {
+    right: var(--space-sm);
+    top: var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-xs);
+  }
+
+  /* To-do form: tighter gaps */
+  .todo-container {
+    gap: var(--space-md);
+  }
+
+  .allTask {
+    padding: var(--space-md);
+  }
+
+  /* Task item: stack content and button vertically */
+  .allTask .task {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .task details {
+    width: 100%;
+  }
+
+  .task button {
+    align-self: flex-start;
+  }
+
+  /* Day planner: single column */
+  .day-planner {
+    grid-template-columns: 1fr;
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  /* Pomodoro: shrink massive timer font to fit screen */
+  .pomo-timer h2 {
+    font-size: clamp(64px, 20vw, 120px);
+  }
+
+  .pomo-btn {
+    gap: var(--space-md);
+  }
+
+  .pomo-btn .start-timer,
+  .pomo-btn .pause-timer,
+  .pomo-btn .reset-timer {
+    font-size: var(--text-base);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* Motivation card: author tag — full-width alignment reset */
+  .motivation-3 {
+    margin-left: auto;
+    max-width: 60%;
+  }
+
+  /* Daily goals nav: stack on small screens */
+  .daily-goals .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .daily-goals .nav .left {
+    font-size: 1.5rem;
+  }
+
+  .daily-goals .nav .right {
+    margin-right: 0;
+  }
+
+  /* Daily goal task title: scale down */
+  .daily-goals .task-column .daily-goal-task h2 {
+    font-size: clamp(18px, 5vw, 28px);
+  }
+
+  /* Modal: nearly full-width */
+  .modal .center-task {
+    width: 92vw;
+    padding: var(--space-md);
+  }
+}
+
+/* ── Mobile (≤375px) ──────────────────────────────────────── */
+@media (max-width: 375px) {
+  /* Feature grid: 2 columns stay, but tighten gaps */
+  section.allElem .all-features {
+    gap: var(--space-sm);
+  }
+
+  /* Nav: even more compact */
+  nav .nav1 h1 {
+    font-size: 14px;
+  }
+
+  nav .nav2 button {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  /* Pomodoro timer: scale down further */
+  .pomo-timer h2 {
+    font-size: clamp(56px, 18vw, 90px);
+  }
+
+  /* Motivation: ensure author tag doesn't overflow */
+  .motivation-3 {
+    max-width: 70%;
+  }
+  .back {
+    right: var(--space-xs);
+    top: var(--space-md);
+  }
+}
+
+/* ── Small Mobile (≤320px) ────────────────────────────────── */
+@media (max-width: 320px) {
+  /* Nav: minimal size, single-line */
+  :root {
+    --nav-h: 50px;
+  }
+
+  nav {
+    padding: 0 var(--space-xs);
+    width: calc(100% - var(--space-xs) * 2);
+    left: var(--space-xs);
+  }
+
+  nav .nav1 h1 {
+    font-size: 12px;
+  }
+
+  nav .nav2 {
+    gap: 3px;
+  }
+
+  nav .nav2 button {
+    font-size: 9px;
+    padding: 3px 6px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Section: minimal margin */
+  section.allElem {
+    margin-top: 62px;
+    padding: 0 var(--space-xs);
+  }
+
+  /* Feature grid: 2 tight columns */
+
+  /* Cards: smaller label text */
+  .elem h2 {
+    font-size: var(--text-sm);
+  }
+
+  /* Header: minimal padding */
+  header {
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  header .header1 h1,
+  header .header2 h1 {
+    font-size: 20px;
+    margin-bottom: var(--space-sm);
+  }
+
+  header .header1 h2,
+  header .header2 h2 {
+    font-size: var(--text-sm);
+  }
+
+  /* fullElem: minimal padding */
+  .fullElem {
+    padding: var(--space-sm);
+  }
+
+  /* Back button: very compact */
+  .back {
+    right: var(--space-xs);
+    top: var(--space-md);
+    padding: 3px var(--space-sm);
+    font-size: 10px;
+  }
+
+  /* To-do: reduce allTask padding */
+  .allTask {
+    padding: var(--space-sm);
+  }
+
+  /* Task item: ensure no overflow */
+  .task summary {
+    font-size: var(--text-sm);
+  }
+
+  /* Pomodoro: smallest timer */
+  .pomo-timer h2 {
+    font-size: clamp(48px, 16vw, 80px);
+  }
+
+  /* Day planner: single column, minimal padding */
+  .day-planner {
+    grid-template-columns: 1fr;
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  /* Motivation: full-width author tag */
+  .motivation-3 {
+    max-width: 80%;
+    margin-left: auto;
+  }
+
+  /* Daily goals: tighter board */
+  .daily-goals .board {
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  .board .task-column {
+    min-width: 200px;
+  }
+
+  /* Modal: full-width */
+  .modal .center-task {
+    width: 96vw;
+    padding: var(--space-sm);
+  }
+}
+
+/* ── Accessibility — reduced motion ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
